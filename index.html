@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elixir 2K25 Registration</title>
+
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #002f4b, #006699);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: background 0.5s;
+    }
+
+    h1 {
+      font-size: 2.6em;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      animation: fadeIn 1s ease-out;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #d0eaff;
+    }
+
+    button {
+      background-color: #ffcc00;
+      color: black;
+      border: none;
+      padding: 14px 35px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color: #ffdb4d;
+      transform: scale(1.05);
+    }
+
+    .socials {
+      margin-top: 40px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .socials a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-size: 1.1em;
+      margin: 6px;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #fff;
+    }
+
+    /* Form iframe */
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 85vh;
+      border: none;
+      display: none;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      button {
+        width: 80%;
+        font-size: 1em;
+      }
+      iframe {
+        height: 90vh;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: none;
+      margin-top: 20px;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top: 5px solid #ffcc00;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <h1>✨ Elixir 2K25 ✨</h1>
+    <p>Welcome to the official registration page</p>
+    <button id="registerBtn">Register Now</button>
+
+    <div class="socials">
+      <a href="mailto:smselixir2k25@gmail.com">📧 smselixir2k25@gmail.com</a><br>
+      <a href="https://www.instagram.com/elixir_2k25?igsh=MXdmemFjYWU1N295OQ==" target="_blank">📷 Follow us on Instagram</a>
+    </div>
+  </div>
+
+  <div class="spinner" id="spinner"></div>
+
+  <iframe id="formFrame"></iframe>
+
+  <script>
+    const btn = document.getElementById("registerBtn");
+    const main = document.getElementById("main");
+    const frame = document.getElementById("formFrame");
+    const spinner = document.getElementById("spinner");
+
+    btn.addEventListener("click", () => {
+      main.style.display = "none";
+      spinner.style.display = "block";
+
+      // ✅ Your embedded Google Form link
+      const googleFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSeMLeT6I4RMohLWbMAsRXKBxvAiSawkYvL_K_dUG2SGvCYd2w/viewform?embedded=true";
+
+      setTimeout(() => {
+        spinner.style.display = "none";
+        frame.src = googleFormLink;
+        frame.style.display = "block";
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
